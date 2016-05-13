@@ -1,6 +1,16 @@
 sudo: false
-⁠⁠⁠language: ruby
+language: ruby
 rvm:
   - 2.2
 before_install:
   - gem install bundler
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: "zct5l6rtcC1Qtk3dydT4ktOgVqS85QKxaTcLGxeJ0tStT/GXHhnUCdH9flpHG0ONGeaF1NZBlIAqrge2RTPW4oCijZGj4zDcz6wPB5KEH+qNPc7/D+2ULUpR94VbxkxZiFom4JmWpRdINO+jD1Sx7i2Gzilcg/dk3WLSYyfa52aaLNIya4DHsjREcXYD5h0W8nGmCahS1Y048Hk5fcdkah+qz+uz5ABW7q85OuFuBUGPvNdvqHl4Kk61owyADGgQIaZ1FbURNA5+os3I2ndKS1VW1YQUDYAqfSJh9aB7/BLr6dPkhmqXI3uzuj9KN8pyF2NOBS84Z4UjqrEAFXyml7vfJxQYHtJNkg6xlapfFoii9ZaVP6sgXrw0m8YPLcterAr3MON/pRmy9XXWciZfpZ+Se5YS3DEPXNxQs1wXV6hn4KhiLduM19+Le262rSSiSL0DL91EVk6BOqGVEDxD4W9UVJR34HUzLj8sLtuSKfolsow0iC8kSauzehzGQ6buWaHsqBaHjXKQwfy65y5wzUuSlpLu3s3ZpFQ8mHLyo3A77uVpM3dXGlOcTg+k2T7XdlPIQt8qi6gM1RYonw/CDhE70wWMSm2wNtKZMhYTs5gQYvaccumFIyKX5V8dkAK93fkJ+vUypcWs05hxxtcyvl0ErF7EF0uzqIBzRs1F3iE="
+
+  app: warm-shelf-78959
+
+services:
+  - postgresql
