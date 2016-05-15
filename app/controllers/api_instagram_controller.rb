@@ -18,6 +18,7 @@ class ApiInstagramController < ApplicationController
 	     metadata={
 	         :total=>tagInfo['data']['media_count']
 	     }
+	     version='1'
 	    # tagInfo['data'].each do |child|
 	    #     metadata<<{
 	    #         :total =>child['media_count']
@@ -33,7 +34,7 @@ class ApiInstagramController < ApplicationController
 	    	#		:caption => child['caption']['text']
 	    	#	}
 	    	#end
-	    	format.json {render json: {metadata: metadata, posts: posts},status:200}
+	    	format.json {render json: {metadata: metadata, posts: posts, version: version},status:200}
 	    end
 	end
 	
@@ -58,7 +59,7 @@ class ApiInstagramController < ApplicationController
 				:tags =>child['tags'],
 				:username =>child['user']['username'],
 				:likes => child['likes']['count'],
-				:url => child['images']['standard_resolution'],
+				:url => child['images']['standard_resolution']['url'],
 				:caption => child['caption']['text']
 			}
 		end
